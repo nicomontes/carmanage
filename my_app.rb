@@ -34,6 +34,7 @@ end
   get "/" do
     content_type :json
     @car = settings.mongo_db['carmanage'].find.to_a.to_json
+    @car = JSON.parse(@car)
     erb :"car/view"
   end
 
