@@ -1,2 +1,7 @@
-<h1>Car List</h1>
-<%= @car[0]['model'] %>
+<h2><%=@car['make'] + " " +@car['model']%><h2>
+<h4><%=@car['motor']%></h4>
+<h4><%=@car['energy'] + ", " +@car['km'] + "km de " +@car['year']%></h4><br/>
+<a href="/refuel/list/<%=@car['_id']['$oid']%>" class="button">Refuel List</a>
+<a href="/refuel/add/<%=@car['_id']['$oid']%>" class="button">Refuel Add</a><br/>
+<a href="/repair/list/<%=@car['_id']['$oid']%>" class="button">Repair List</a>
+<a href="/repair/add/<%=@car['_id']['$oid']%>" class="button">Repair Add</a>
