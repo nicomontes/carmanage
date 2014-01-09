@@ -1,0 +1,19 @@
+<h2><a href="/car/view/<%=@car['_id']['$oid']%>"><%=@car['make'] + " " + @car['model']%></a><h2>
+<h2>refuel List</h2>
+<% 
+  i = 0
+  if @refuel.nil?
+    %><h3>No refueling<h3><%
+  else
+      while @refuel[i] do %>
+      <h3>• <%=@refuel[i]['date']%></h3>
+      <h4><%=@refuel[i]['km'] + " km with " + @refuel[i]['liter'] + " litres, to the refuel at " + @refuel[i]['station'] + " for " + @refuel[i]['price'] + "€ per liter"%></h4>
+      <%
+        @use = @refuel[i]['liter'].to_f / (@refuel[i]['km'].to_f / 100)
+        @price = @use * @refuel[i]['price'].to_f
+      %>
+      <%=@use.to_s[/[0-9]*\.[0-9]{2}/]%> Litres/100km, <%=@price.to_s[/[0-9]*\.[0-9]{2}/]%>€/100km.
+      <%i += 1
+    end
+  end
+%>

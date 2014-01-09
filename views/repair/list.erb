@@ -1,0 +1,17 @@
+<h2><a href="/car/view/<%=@car['_id']['$oid']%>"><%=@car['make'] + " " + @car['model']%></a><h2>
+<h2>Repair List</h2>
+<% 
+  i = 0
+  if @repair.nil?
+    %><h3>No repair<h3><%
+  else
+    while @repair[i] do %>
+    <h3>• <%=@repair[i]['km']%> km</h3>
+    <h4>Repair <%=@repair[i]['date'] + ", costing " + @repair[i]['price'] + "€, for : "%></h4>
+    <p>
+    <%=@repair[i]['comment']%>
+    </p>
+    <%i += 1
+    end
+  end
+%>

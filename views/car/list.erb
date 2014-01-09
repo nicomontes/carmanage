@@ -1,0 +1,9 @@
+<% 
+  i = 0
+  while @listCar[i] do %>
+  <h3><a href="/car/view/<%=@listCar[i]['_id']['$oid']%>"><%=@listCar[i]['make'] + " " + @listCar[i]['model']%></a></h3>
+    <%i += 1
+end
+%>
+<br/>
+<a href="/car/add" class="button">Add Car</a>

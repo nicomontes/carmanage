@@ -1,0 +1,27 @@
+<h2><a href="/car/view/<%=@car['_id']['$oid']%>"><%=@car['make'] + " " + @car['model']%></a><h2>
+<h2>Add refuel</h2>
+<form action="/refuel/add/<%=@carID%>" method="post">
+  <div class="five columns">
+    <label>Liter</label>
+    <input type="number" name="liter"/>
+  </div>
+  <div class="five columns">
+    <label>KM</label>
+    <input type="number" name="km"/>
+  </div>
+  <div class="five columns">
+    <label>Station</label>
+    <input type="text" name="station"/>
+  </div>
+  <div class="five columns">
+    <label>Price/Liter</label>
+    <input type="number" name="price" max="3" step="any"/><br/>
+  </div>
+  <div class="five columns">
+    <label>Date</label>
+    <input type="date" autocomplete="on" name="date" id="date"/><br/>
+  </div>
+  <div class="sixteen columns" style="margin-top: 20px">
+    <input type="submit" value="Submit"/>
+  </div>
+</form>
