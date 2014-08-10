@@ -14,7 +14,7 @@ end
 include Mongo
 
 configure do
-  db = MongoClient.new("172.17.0.32", 27017).db("carmanage")
+  db = MongoClient.new("192.168.1.102", 27017).db("carmanage")
   coll = db.collection("carmanage")
   set :coll, coll
   set :db, db
