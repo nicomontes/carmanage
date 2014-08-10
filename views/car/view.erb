@@ -1,7 +1,39 @@
-<h2><%=@car['make'] + " " +@car['model']%><h2>
-<h4><%=@car['motor']%></h4>
-<h4><%=@car['energy'] + ", " +@car['km'] + "km de " +@car['year']%></h4><br/>
-<a href="/refuel/list/<%=@car['_id']['$oid']%>" class="button">Refuel List</a>
-<a href="/refuel/add/<%=@car['_id']['$oid']%>" class="button">Refuel Add</a><br/>
-<a href="/repair/list/<%=@car['_id']['$oid']%>" class="button">Repair List</a>
-<a href="/repair/add/<%=@car['_id']['$oid']%>" class="button">Repair Add</a>
+<div class="pure-u-1">
+	<div class="pure-u-1">
+		<h2><%=@car['make'] + " " +@car['model']%><h2>
+	</div>
+	<div class="pure-u-1">
+		<h4><%=@car['motor']%></h4>
+	</div>
+	<div class="pure-u-1">
+		<h4><%=@car['energy'] + ", " +@car['km'] + "km de " +@car['year']%></h4><br/>
+	</div>
+	<div class="pure-u-1">
+		<div class="pure-u-1-6">
+			<a href="/refuel/list/<%=@car['_id']['$oid']%>" class="pure-button">
+				<i class="fa fa-tint"></i>
+				Refuel List
+			</a>
+		</div>
+		<div class="pure-u-1-6">
+			<a href="/refuel/add/<%=@car['_id']['$oid']%>" class="pure-button">
+				<i class="fa fa-tint"></i>
+				Refuel Add
+			</a><br/><br/>
+		</div>
+	</div>
+	<div class="pure-u-1">
+		<div class="pure-u-1-6">
+			<a href="/repair/list/<%=@car['_id']['$oid']%>" class="pure-button">
+				<i class="fa fa-wrench"></i>
+				Repair List
+			</a>
+		</div>
+		<div class="pure-u-1-6">
+			<a href="/repair/add/<%=@car['_id']['$oid']%>" class="pure-button">
+				<i class="fa fa-wrench"></i>
+				Repair Add
+			</a>
+		</div>
+	</div>
+</div>
