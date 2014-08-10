@@ -1,17 +1,34 @@
-<h2><a href="/car/view/<%=@car['_id']['$oid']%>"><%=@car['make'] + " " + @car['model']%></a><h2>
-<h2>Repair List</h2>
-<% 
+<div class="pure-u-1">
+
+  <h2>Repair List</h2>
+
+  <table class="pure-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>KM</th>
+        <th>Price</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+<%
   i = 0
   if @repair.nil?
     %><h3>No repair<h3><%
   else
     while @repair[i] do %>
-    <h3>• <%=@repair[i]['km']%> km</h3>
-    <h4>Repair <%=@repair[i]['date'] + ", costing " + @repair[i]['price'] + "€, for : "%></h4>
-    <p>
-    <%=@repair[i]['comment']%>
-    </p>
+    <tr>
+      <td><%=@repair[i]['date']%></td>
+      <td><%=@repair[i]['km']%></td>
+      <td><%=@repair[i]['price']%></td>
+      <td><%=@repair[i]['comment']%></td>
+    </tr>
     <%i += 1
     end
   end
 %>
+    </tbody>
+  </table>
+</div>
