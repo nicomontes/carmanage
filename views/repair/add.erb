@@ -1,23 +1,32 @@
-<h2><a href="/car/view/<%=@car['_id']['$oid']%>"><%=@car['make'] + " " + @car['model']%></a><h2>
-<h2>Add Repair</h2>
-<form action="/repair/add/<%=@carID%>" method="post">
-  <div class="five columns">
-    <label>KM</label>
-    <input type="number" name="km"/>
-  </div>
-  <div class="five columns">
-    <label>Price</label>
-    <input type="number" name="price" max="20000" step="any"/><br/>
-  </div>
-  <div class="five columns">
-    <label>Date</label>
-    <input type="date" autocomplete="on" name="date"/><br/>
-  </div>
-  <div class="five columns">
-    <label>Comment</label>
-    <textarea name="comment"></textarea><br/>
-  </div>
-  <div class="sixteen columns">
-    <input type="submit" value="Submit"/>
-  </div>
-</form>
+<div class="pure-u-1">
+  <form class="pure-form pure-form-stacked" action="/car/add" method="post">
+    <fieldset>
+      <legend>Add new repair</legend>
+
+      <div class="pure-g">
+
+        <div class="pure-u-1 pure-u-md-1-3">
+          <label for="km">KM</label>
+          <input id="km" type="number" name="km"/>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <label for="price">Price</label>
+          <input id="price" type="number" name="price" min="0" max="20000" step="any"/>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <label for="date">Date</label>
+          <input id="date" type="date" name="date" autocomplete="on"/><br/>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment"></textarea><br/>
+        </div>
+        <div class="pure-u-1">
+          <input class="pure-button pure-button-primary" type="submit" value="Submit"/>
+        </div>
+
+      </div>
+
+    </fieldset>
+  </form>
+</div>
