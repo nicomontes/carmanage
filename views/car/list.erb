@@ -3,7 +3,7 @@
     i = 0
     while @listCar[i] do
   %>
-  <h3><a class="pure-button" href="/car/view/<%=@listCar[i]['_id']['$oid']%>"><%=@listCar[i]['make'] + " " + @listCar[i]['model']%></a></h3>
+	<h3><a class="pure-button" href="/car/view/<%=@listCar[i]['_id']['$oid']%>"><%=@listCar[i]['make']%> <%=@listCar[i]['model']%></a></h3>
   <%
     i += 1
     end
